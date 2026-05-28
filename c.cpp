@@ -25,7 +25,7 @@ int main() {
         result += "*";
     }
 
-    result.pop_back();  // удалить последнюю '*'
+    result.pop_back();  // удаляем последнюю '*'
     cout << result;
 
     return 0;
