@@ -48,17 +48,25 @@ vector<int> search(string &pat, string &txt) {
 }
 
 int main() {
-    string p, t;
-    int k;
-    cin >> p >> k;
-    cin >> t;
+    string a, b;
+    cin >> a >> b;
 
-    vector<int> matches = search(p, t);
+    if (a.size() != b.size()) {
+        cout << -1;
+        return 0;
+    }
 
-    if (matches.size() >= k)
-        cout << "YES";
-    else
-        cout << "NO";
+    string doubled = a + a;
+    vector<int> positions = search(b, doubled);
+
+    if (positions.empty()) {
+        cout << -1;
+    } else {
+        int pos = positions[0];
+        int n = a.size();
+        int shift = (n - pos) % n;
+        cout << shift;
+    }
 
     return 0;
 }
